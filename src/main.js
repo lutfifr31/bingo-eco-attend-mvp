@@ -69,7 +69,7 @@ function calculateOutput(kategori, berat) {
   return `${pupuk} kg Pupuk Kompos`;
 }
 
-// Perbarui kartu statistik & tabel log kehadiran
+// Perbarui kartu statistik, progress bar & tabel log kehadiran
 function renderApp() {
   const records = getRecords();
 
@@ -86,18 +86,29 @@ function renderApp() {
     }
   });
 
+  const totalPaving = Math.round(totalPlastik * 2);
+
   // Update kartu statistik
   statWarga.innerHTML = `${records.length} <span class="font-sans text-sm font-bold text-slate-500">Orang</span>`;
   statSampah.innerHTML = `${totalBerat.toFixed(1)} <span class="font-sans text-sm font-bold text-slate-500">kg</span>`;
-  statPaving.innerHTML = `${Math.round(totalPlastik * 2)} <span class="font-sans text-sm font-bold text-slate-800">pcs</span>`;
+  statPaving.innerHTML = `${totalPaving} <span class="font-sans text-sm font-bold text-slate-800">pcs</span>`;
   statPupuk.innerHTML = `${(totalOrganik * 0.5).toFixed(1)} <span class="font-sans text-sm font-bold text-slate-800">kg</span>`;
+
+  // Update progress bar target 100 Paving Block RT
+  const progressPercent = Math.min(100, Math.round((totalPaving / 100) * 100));
+  const progressBar = document.getElementById('paving-progress-bar');
+  const progressText = document.getElementById('paving-progress-text');
+  if (progressBar && progressText) {
+    progressBar.style.width = `${progressPercent}%`;
+    progressText.textContent = `${totalPaving} / 100 pcs (${progressPercent}%)`;
+  }
 
   // Render baris tabel
   if (records.length === 0) {
     tableBody.innerHTML = `
       <tr>
-        <td colspan="6" class="py-8 text-center text-slate-500 font-semibold text-sm">
-          Belum ada warga yang menyetor sampah. Mulai dengan mengambil foto wajah di atas.
+        <td colspan="6" class="py-10 text-center text-slate-500 font-semibold text-sm">
+          Belum ada warga yang menyetor sampah. Mulai dengan mengangkat 5 jari di depan kamera!
         </td>
       </tr>
     `;
@@ -139,7 +150,7 @@ form.addEventListener('submit', (e) => {
 
   const foto = camera.getCapturedImage();
   if (!foto) {
-    alert('Silakan angkat 5 jari atau klik tombol "Ambil Foto Wajah" terlebih dahulu sebagai bukti kehadiran!');
+    alert('Silakan angkat 5 jari atau klik tombol "Ambil Foto Manual" terlebih dahulu sebagai bukti kehadiran!');
     return;
   }
 

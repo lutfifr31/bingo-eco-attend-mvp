@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bingo-orange: #FF933E;
+  --color-bingo-yellow: #FFCB56;
+  --color-bingo-cream: #FFE9A9;
+  --color-bingo-blue: #73A5CA;
+  --font-display: 'Anton', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+@layer utilities {
+  .tactile-card {
+    border: 2.5px solid #0f172a;
+    box-shadow: 5px 5px 0px #0f172a;
+  }
+  .tactile-btn {
+    border: 2px solid #0f172a;
+    box-shadow: 3px 3px 0px #0f172a;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .tactile-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px #0f172a;
+  }
+}

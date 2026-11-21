@@ -1,0 +1,1 @@
+# bingo-eco-attend-mvp

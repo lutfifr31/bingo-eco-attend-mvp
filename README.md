@@ -3,6 +3,13 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:73A5CA,50:FFCB56,100:FF933E&height=210&section=header&text=BINGO%20(ECO-ATTEND)&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Smart%20Gotong%20Royong%20Attendance%20%26%20Waste%20Allocation%20MVP&descAlignY=58&descSize=15&animation=fadeIn" width="100%" alt="BINGO ECO-ATTEND Banner" />
 </div>
 
+<!-- Maskot BinBin -->
+<div align="center">
+  <img src="./public/binbin.jpeg" width="140" alt="Maskot BinBin" />
+</div>
+
+<br/>
+
 <!-- Animasi Teks Mengetik -->
 <div align="center">
   <a href="https://github.com/lutfifr31/bingo-eco-attend-mvp">

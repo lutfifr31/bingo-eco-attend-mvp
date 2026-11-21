@@ -1,0 +1,143 @@
+<svg width="1200" height="340" viewBox="0 0 1200 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2" fill="#FFFFFF" fill-opacity="0.24" />
+    </pattern>
+  </defs>
+
+  
+  <rect x="14" y="14" width="1178" height="318" rx="28" fill="#0F172A" />
+  
+  <rect x="6" y="6" width="1178" height="318" rx="28" fill="#73A5CA" stroke="#0F172A" stroke-width="6" />
+  <rect x="6" y="6" width="1178" height="318" rx="28" fill="url(#dotGrid)" />
+
+  
+  <circle cx="95" cy="60" r="85" fill="#FFE9A9" fill-opacity="0.22" />
+  <circle cx="760" cy="295" r="95" fill="#FFCB56" fill-opacity="0.25" />
+
+  
+  <g>
+    <rect x="56" y="34" width="335" height="38" rx="19" fill="#FFE9A9" stroke="#0F172A" stroke-width="3" />
+    <circle cx="80" cy="53" r="7" fill="#FF933E" stroke="#0F172A" stroke-width="2">
+      <animate attributeName="r" values="6;8.5;6" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+    <text x="98" y="58" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="13" letter-spacing="0.8">
+      5-FINGER PALM SHUTTER • AI VISION
+    </text>
+  </g>
+
+  
+  <g>
+    <rect x="406" y="34" width="225" height="38" rx="19" fill="#FF933E" stroke="#0F172A" stroke-width="3" />
+    <text x="518" y="58" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="13" letter-spacing="0.8">
+      MVP v1.0 • POSKO RT/RW
+    </text>
+  </g>
+
+  
+  <text x="61" y="153" fill="#0F172A" font-family="Impact, Arial Black, Segoe UI, sans-serif" font-weight="900" font-size="84" letter-spacing="2">BINGO</text>
+  <text x="56" y="148" fill="#FFFFFF" font-family="Impact, Arial Black, Segoe UI, sans-serif" font-weight="900" font-size="84" letter-spacing="2">BINGO</text>
+
+  
+  <rect x="336" y="88" width="405" height="66" rx="16" fill="#0F172A" />
+  <rect x="331" y="83" width="405" height="66" rx="16" fill="#FF933E" stroke="#0F172A" stroke-width="4" />
+  <text x="533" y="130" text-anchor="middle" fill="#FFFFFF" font-family="Impact, Arial Black, Segoe UI, sans-serif" font-weight="900" font-size="44" letter-spacing="2">
+    ECO-ATTEND
+  </text>
+
+  
+  <rect x="60" y="176" width="680" height="46" rx="13" fill="#0F172A" />
+  <rect x="56" y="172" width="680" height="46" rx="13" fill="#FFCB56" stroke="#0F172A" stroke-width="3.5" />
+  <text x="396" y="201" text-anchor="middle" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="16.5" letter-spacing="0.4">
+    Sistem Presensi Gotong Royong &amp; Alokasi Daur Ulang Berbasis Bukti Foto
+  </text>
+
+  
+  <rect x="56" y="242" width="215" height="38" rx="19" fill="#FFFFFF" stroke="#0F172A" stroke-width="3" />
+  <text x="163" y="266" text-anchor="middle" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="13">
+    Plastik → Paving Block
+  </text>
+
+  <rect x="285" y="242" width="225" height="38" rx="19" fill="#FFFFFF" stroke="#0F172A" stroke-width="3" />
+  <text x="397" y="266" text-anchor="middle" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="13">
+    Organik → Pupuk Kompos
+  </text>
+
+  <rect x="524" y="242" width="212" height="38" rx="19" fill="#FFE9A9" stroke="#0F172A" stroke-width="3" />
+  <text x="630" y="266" text-anchor="middle" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="13">
+    Auto-Shutter 5 Detik
+  </text>
+
+  
+  <g>
+    
+    <circle cx="975" cy="172" r="126" fill="#0F172A" />
+    <circle cx="970" cy="167" r="126" fill="#FFE9A9" stroke="#0F172A" stroke-width="5" />
+
+    
+    <circle cx="970" cy="167" r="126" stroke="#FF933E" stroke-width="3" fill="none" opacity="0.7">
+      <animate attributeName="r" values="126;144;126" dur="2.6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.75;0;0.75" dur="2.6s" repeatCount="indefinite" />
+    </circle>
+
+    
+    <path d="M905 190 L875 262 L1065 262 L1035 190 Z" fill="#D93829" stroke="#0F172A" stroke-width="4" stroke-linejoin="round" />
+
+    
+    <line x1="912" y1="138" x2="894" y2="88" stroke="#0F172A" stroke-width="4.5" stroke-linecap="round" />
+    <circle cx="894" cy="85" r="7" fill="#0F172A" />
+    <line x1="1028" y1="138" x2="1046" y2="88" stroke="#0F172A" stroke-width="4.5" stroke-linecap="round" />
+    <circle cx="1046" cy="85" r="7" fill="#0F172A" />
+
+    
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-4 970 96; 4 970 96; -4 970 96" dur="2.4s" repeatCount="indefinite" />
+      <path d="M970 98 C955 72, 932 72, 936 92 C940 104, 960 102, 970 98 Z" fill="#E63928" stroke="#0F172A" stroke-width="3.5" />
+      <path d="M970 98 C985 72, 1008 72, 1004 92 C1000 104, 980 102, 970 98 Z" fill="#E63928" stroke="#0F172A" stroke-width="3.5" />
+    </g>
+
+    
+    <rect x="912" y="96" width="116" height="154" rx="28" fill="#9AC836" stroke="#0F172A" stroke-width="4.5" />
+    
+    <rect x="943" y="108" width="54" height="11" rx="5.5" fill="#0F172A" />
+
+    
+    <rect x="900" y="144" width="12" height="36" rx="6" fill="#E63928" stroke="#0F172A" stroke-width="3.5" />
+    <rect x="1028" y="144" width="12" height="36" rx="6" fill="#E63928" stroke="#0F172A" stroke-width="3.5" />
+
+    
+    <rect x="927" y="128" width="86" height="70" rx="16" fill="#FFFFFF" stroke="#0F172A" stroke-width="3.5" />
+    
+    <circle cx="952" cy="160" r="8" fill="#0F172A" />
+    <circle cx="954" cy="157" r="2.8" fill="#FFFFFF" />
+    <circle cx="988" cy="160" r="8" fill="#0F172A" />
+    <circle cx="990" cy="157" r="2.8" fill="#FFFFFF" />
+    <ellipse cx="944" cy="173" rx="6" ry="3.5" fill="#E63928" />
+    <ellipse cx="996" cy="173" rx="6" ry="3.5" fill="#E63928" />
+    
+    <path d="M961 175 Q970 189 979 175 Z" fill="#0F172A" />
+
+    
+    <path d="M915 204 Q970 222 1025 204 L1022 218 Q970 234 918 218 Z" fill="#E63928" stroke="#0F172A" stroke-width="3.5" />
+    <circle cx="970" cy="217" r="15" fill="#E63928" stroke="#0F172A" stroke-width="3.5" />
+    <text x="970" y="223" text-anchor="middle" fill="#FFCB56" font-family="Arial Black, sans-serif" font-weight="900" font-size="16">B</text>
+
+    
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-10 905 190; 10 905 190; -10 905 190" dur="1.6s" repeatCount="indefinite" />
+      <circle cx="882" cy="166" r="18" fill="#1D5BBF" stroke="#0F172A" stroke-width="3.5" />
+      
+      <line x1="867" y1="158" x2="856" y2="146" stroke="#1D5BBF" stroke-width="7" stroke-linecap="round" />
+      <line x1="874" y1="150" x2="867" y2="134" stroke="#1D5BBF" stroke-width="7" stroke-linecap="round" />
+      <line x1="882" y1="148" x2="882" y2="131" stroke="#1D5BBF" stroke-width="7" stroke-linecap="round" />
+      <line x1="890" y1="150" x2="896" y2="135" stroke="#1D5BBF" stroke-width="7" stroke-linecap="round" />
+      <line x1="897" y1="158" x2="907" y2="148" stroke="#1D5BBF" stroke-width="7" stroke-linecap="round" />
+    </g>
+
+    
+    <rect x="822" y="96" width="92" height="30" rx="15" fill="#FF933E" stroke="#0F172A" stroke-width="3" />
+    <text x="868" y="116" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-weight="900" font-size="12">
+      5 JARI SCAN
+    </text>
+  </g>
+</svg>

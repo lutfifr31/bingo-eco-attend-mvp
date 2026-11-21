@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BINGO (ECO-ATTEND) — Smart Gotong Royong Kiosk</title>
+    <style>
+      .bg-dot-pattern {
+        background-image: radial-gradient(rgba(15, 23, 42, 0.16) 1.5px, transparent 1.5px);
+        background-size: 18px 18px;
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(-3deg); }
+        50% { transform: translateY(-6px) rotate(1deg); }
+      }
+      @keyframes floatAlt {
+        0%, 100% { transform: translateY(0px) rotate(3deg); }
+        50% { transform: translateY(-6px) rotate(-1deg); }
+      }
+      .sticker-float-1 { animation: floatSlow 3.6s ease-in-out infinite; }
+      .sticker-float-2 { animation: floatAlt 4.2s ease-in-out infinite; }
+    </style>
+    <script type="module" crossorigin src="/bingo-eco-attend-mvp/assets/index-CpDpyWOv.js"></script>
+    <link rel="stylesheet" crossorigin href="/bingo-eco-attend-mvp/assets/index-BWbzuvlp.css">
+  </head>
+  <body class="bg-[#FFFDF6] text-slate-900 min-h-screen font-sans relative overflow-x-hidden flex flex-col">
+    <!-- MENU TARIK "PULL ME" DI POJOK KANAN ATAS -->
+    <div class="fixed top-0 right-4 sm:right-8 z-50 flex flex-col items-end">
+      <nav
+        id="pull-menu-drawer"
+        class="w-64 sm:w-72 bg-bingo-cream border-x-2 border-b-2 border-slate-900 shadow-[6px_6px_0px_#0f172a] rounded-b-2xl overflow-hidden transition-all duration-300 ease-out max-h-0 opacity-0"
+      >
+        <div class="p-4 space-y-2 border-b-2 border-dashed border-slate-900/40">
+          <p class="text-[10px] font-extrabold uppercase tracking-widest text-slate-600 mb-2">
+            Navigasi Cepat Posko
+          </p>
+          <a
+            href="#section-absen"
+            class="pull-link group flex items-center justify-between px-3 py-2 rounded-lg hover:bg-bingo-yellow font-display text-2xl tracking-wide text-slate-900 transition"
+          >
+            <span>ABSEN & SETOR</span>
+            <span class="opacity-0 group-hover:opacity-100 group-hover:rotate-12 transition bg-bingo-orange text-white px-2 py-0.5 rounded-full border border-slate-900 font-sans font-bold text-xs">
+              CAM
+            </span>
+          </a>
+          <a
+            href="#section-dampak"
+            class="pull-link group flex items-center justify-between px-3 py-2 rounded-lg hover:bg-bingo-yellow font-display text-2xl tracking-wide text-slate-900 transition"
+          >
+            <span>DAMPAK PAVING</span>
+            <span class="opacity-0 group-hover:opacity-100 group-hover:-rotate-6 transition bg-bingo-blue text-white px-2 py-0.5 rounded-full border border-slate-900 font-sans font-bold text-xs">
+              ECO
+            </span>
+          </a>
+          <a
+            href="#section-log"
+            class="pull-link group flex items-center justify-between px-3 py-2 rounded-lg hover:bg-bingo-yellow font-display text-2xl tracking-wide text-slate-900 transition"
+          >
+            <span>LOG WARGA</span>
+            <span class="opacity-0 group-hover:opacity-100 group-hover:rotate-6 transition bg-white text-slate-900 px-2 py-0.5 rounded-full border border-slate-900 font-sans font-bold text-xs">
+              DATA
+            </span>
+          </a>
+          <button
+            type="button"
+            id="btn-export-menu"
+            class="w-full group flex items-center justify-between px-3 py-2 rounded-lg hover:bg-bingo-orange hover:text-white font-display text-2xl tracking-wide text-slate-900 transition cursor-pointer text-left"
+          >
+            <span>EXPORT CSV</span>
+            <span class="opacity-0 group-hover:opacity-100 transition text-xs bg-slate-900 text-bingo-yellow px-2 py-0.5 rounded-full font-sans font-bold">
+              .XLS
+            </span>
+          </button>
+        </div>
+      </nav>
+
+      <button
+        type="button"
+        id="btn-pull-me"
+        aria-expanded="false"
+        class="bg-bingo-cream hover:bg-bingo-yellow text-slate-900 border-x-2 border-b-2 border-t-2 border-t-dashed border-slate-900 px-4 py-2 rounded-b-xl shadow-[4px_4px_0px_#0f172a] flex items-center gap-2 font-extrabold text-xs tracking-wider uppercase cursor-pointer transition-transform active:translate-y-1"
+      >
+        <span id="pull-label">PULL ME</span>
+        <svg id="pull-arrow" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- HERO SECTION 2-KOLOM GAYA POSTER TACTILE -->
+    <header class="bg-bingo-blue bg-dot-pattern border-b-4 border-slate-900 pt-10 pb-12 px-4 relative">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Kolom Kiri: Headline & CTA -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-5">
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+            <span class="inline-flex items-center gap-2 bg-bingo-cream border-2 border-slate-900 px-3.5 py-1 rounded-full shadow-[3px_3px_0px_#0f172a] -rotate-1 text-xs font-extrabold tracking-widest uppercase">
+              <span class="w-2.5 h-2.5 rounded-full bg-bingo-orange border border-slate-900 animate-ping"></span>
+              BINGO • ECO-ATTEND MVP
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white border-2 border-slate-900 px-3 py-1 rounded-full shadow-[3px_3px_0px_#0f172a] rotate-1 text-xs font-extrabold uppercase">
+              🖐️ Hands-Free AI Camera
+            </span>
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-7xl uppercase tracking-tight text-white drop-shadow-[4px_4px_0px_#0f172a] leading-[0.95]">
+            SETOR SAMPAH,<br />
+            <span class="inline-block bg-bingo-yellow text-slate-900 px-3 py-1 mt-2 border-3 border-slate-900 shadow-[5px_5px_0px_#0f172a] -rotate-1">
+              ABSEN GOTONG ROYONG.
+            </span>
+          </h1>
+
+          <p class="text-sm sm:text-base font-semibold text-slate-900 bg-white/95 border-2 border-slate-900 rounded-2xl p-4 shadow-[4px_4px_0px_#0f172a] leading-relaxed">
+            Cukup bawa sampah terpilah ke posko RT/RW, <b>angkat 5 jari</b> di depan kamera untuk foto bukti otomatis, dan pantau langsung konversinya menjadi <span class="bg-bingo-yellow px-1.5 py-0.5 rounded border border-slate-900 font-extrabold">Paving Block</span> &amp; <span class="bg-bingo-cream px-1.5 py-0.5 rounded border border-slate-900 font-extrabold">Pupuk Kompos</span>.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1">
+            <a
+              href="#section-absen"
+              class="bg-bingo-orange hover:opacity-95 text-white font-extrabold text-sm px-6 py-3.5 rounded-xl tactile-btn uppercase tracking-wider inline-flex items-center gap-2"
+            >
+              <span>Mulai Absen Warga</span>
+              <span>↓</span>
+            </a>
+            <a
+              href="#section-log"
+              class="bg-white hover:bg-bingo-cream text-slate-900 font-extrabold text-sm px-5 py-3.5 rounded-xl tactile-btn uppercase tracking-wider"
+            >
+              Lihat Rekap Data
+            </a>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Kartu Spotlight Maskot BinBin -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative bg-bingo-cream border-3 border-slate-900 rounded-3xl p-6 shadow-[8px_8px_0px_#0f172a] max-w-xs w-full text-center">
+            <!-- Stiker Melayang Kiri Atas -->
+            <div class="sticker-float-1 absolute -top-4 -left-4 bg-bingo-yellow border-2 border-slate-900 px-3 py-1 rounded-full shadow-[3px_3px_0px_#0f172a] text-xs font-extrabold uppercase">
+              🖐️ 5 Jari = Foto!
+            </div>
+
+            <!-- Stiker Melayang Kanan Bawah -->
+            <div class="sticker-float-2 absolute -bottom-3 -right-3 bg-bingo-orange text-white border-2 border-slate-900 px-3 py-1 rounded-full shadow-[3px_3px_0px_#0f172a] text-xs font-extrabold uppercase">
+              ♻️ Zero Touch
+            </div>
+
+            <div class="w-40 h-40 mx-auto rounded-full border-4 border-slate-900 bg-white overflow-hidden shadow-[4px_4px_0px_#0f172a]">
+              <img
+                src="./binbin.jpeg"
+                alt="Maskot BinBin BINGO"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+
+            <div class="mt-4 space-y-1">
+              <span class="inline-block bg-slate-900 text-bingo-yellow text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-widest">
+                Asisten Posko Digital
+              </span>
+              <h2 class="font-display text-3xl tracking-wide text-slate-900">HALO, AKU BINBIN!</h2>
+              <p class="text-xs font-bold text-slate-700">
+                "Tangan kotor pegang sampah? Cukup angkat 5 jari ke kamera, biar aku yang foto!"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STRIP ALUR KERJA 3 LANGKAH -->
+    <section class="bg-bingo-yellow border-b-4 border-slate-900 py-4 px-4">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="bg-white border-2 border-slate-900 rounded-xl px-4 py-2.5 shadow-[3px_3px_0px_#0f172a] flex items-center gap-3">
+          <span class="font-display text-2xl bg-bingo-blue text-white w-9 h-9 rounded-lg border-2 border-slate-900 flex items-center justify-center shrink-0">1</span>
+          <div>
+            <p class="text-xs font-extrabold uppercase text-slate-900">Pilah &amp; Timbang Sampah</p>
+            <p class="text-[11px] font-semibold text-slate-600">Pisahkan Plastik &amp; Organik di posko</p>
+          </div>
+        </div>
+        <div class="bg-white border-2 border-slate-900 rounded-xl px-4 py-2.5 shadow-[3px_3px_0px_#0f172a] flex items-center gap-3">
+          <span class="font-display text-2xl bg-bingo-orange text-white w-9 h-9 rounded-lg border-2 border-slate-900 flex items-center justify-center shrink-0">2</span>
+          <div>
+            <p class="text-xs font-extrabold uppercase text-slate-900">Angkat 5 Jari (Scan AI)</p>
+            <p class="text-[11px] font-semibold text-slate-600">Timer 5 detik otomatis memotret wajah</p>
+          </div>
+        </div>
+        <div class="bg-white border-2 border-slate-900 rounded-xl px-4 py-2.5 shadow-[3px_3px_0px_#0f172a] flex items-center gap-3">
+          <span class="font-display text-2xl bg-bingo-cream text-slate-900 w-9 h-9 rounded-lg border-2 border-slate-900 flex items-center justify-center shrink-0">3</span>
+          <div>
+            <p class="text-xs font-extrabold uppercase text-slate-900">Otomatis Jadi Paving &amp; Pupuk</p>
+            <p class="text-[11px] font-semibold text-slate-600">Presensi masuk log &amp; siap Export CSV</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="max-w-6xl w-full mx-auto px-4 py-8 space-y-8 flex-1">
+      <!-- KARTU STATISTIK DAMPAK + PROGRESS BAR TARGET RT -->
+      <section id="section-dampak" class="space-y-4">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-white p-4 rounded-2xl tactile-card relative overflow-hidden">
+            <div class="flex items-center justify-between">
+              <p class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Warga Hadir</p>
+              <span class="text-lg">👥</span>
+            </div>
+            <p id="stat-warga" class="font-display text-4xl text-slate-900 mt-1">0 <span class="font-sans text-sm font-bold text-slate-500">Orang</span></p>
+            <p class="text-[11px] font-semibold text-slate-500 mt-1">Terverifikasi foto wajah</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-2xl tactile-card relative overflow-hidden">
+            <div class="flex items-center justify-between">
+              <p class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Total Sampah</p>
+              <span class="text-lg">⚖️</span>
+            </div>
+            <p id="stat-sampah" class="font-display text-4xl text-bingo-orange mt-1">0 <span class="font-sans text-sm font-bold text-slate-500">kg</span></p>
+            <p class="text-[11px] font-semibold text-slate-500 mt-1">Terkumpul di posko RT</p>
+          </div>
+
+          <div class="bg-bingo-yellow p-4 rounded-2xl tactile-card relative overflow-hidden">
+            <div class="flex items-center justify-between">
+              <p class="text-xs font-extrabold uppercase tracking-wider text-slate-900">Potensi Paving Block</p>
+              <span class="text-lg">🧱</span>
+            </div>
+            <p id="stat-paving" class="font-display text-4xl text-slate-900 mt-1">0 <span class="font-sans text-sm font-bold text-slate-800">pcs</span></p>
+            <p class="text-[11px] font-bold text-slate-800 mt-1">1 kg plastik = 2 paving block</p>
+          </div>
+
+          <div class="bg-bingo-cream p-4 rounded-2xl tactile-card relative overflow-hidden">
+            <div class="flex items-center justify-between">
+              <p class="text-xs font-extrabold uppercase tracking-wider text-slate-900">Potensi Pupuk Kompos</p>
+              <span class="text-lg">🌱</span>
+            </div>
+            <p id="stat-pupuk" class="font-display text-4xl text-slate-900 mt-1">0 <span class="font-sans text-sm font-bold text-slate-800">kg</span></p>
+            <p class="text-[11px] font-bold text-slate-800 mt-1">1 kg organik = 0,5 kg pupuk</p>
+          </div>
+        </div>
+
+        <!-- Bar Target Proyek Lingkungan RT -->
+        <div class="bg-white p-4 rounded-2xl tactile-card flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="space-y-0.5 shrink-0">
+            <span class="inline-block bg-bingo-blue text-white text-[10px] font-extrabold px-2 py-0.5 rounded border border-slate-900 uppercase">
+              Target Proyek RT
+            </span>
+            <p class="text-sm font-extrabold text-slate-900">Perbaikan Jalan Gang (Target: 100 Paving Block)</p>
+          </div>
+          <div class="w-full sm:flex-1">
+            <div class="flex justify-between text-xs font-extrabold text-slate-700 mb-1">
+              <span>Progres Bahan Baku Plastik</span>
+              <span id="paving-progress-text">0 / 100 pcs (0%)</span>
+            </div>
+            <div class="w-full h-4 bg-slate-200 rounded-full border-2 border-slate-900 overflow-hidden">
+              <div
+                id="paving-progress-bar"
+                class="h-full bg-bingo-orange transition-all duration-500"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AREA INPUT & KAMERA -->
+      <section id="section-absen" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Kolom Kamera Kiosk -->
+        <div class="lg:col-span-5 bg-white p-5 rounded-2xl tactile-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="bg-slate-900 text-bingo-yellow font-display text-lg px-2.5 py-0.5 rounded-lg">01</span>
+                <h2 class="font-display text-2xl tracking-wide uppercase text-slate-900">Foto Wajah Warga</h2>
+              </div>
+              <span class="bg-bingo-orange text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-slate-900">
+                WAJIB
+              </span>
+            </div>
+
+            <!-- Viewfinder Kamera -->
+            <div class="relative aspect-video bg-slate-900 rounded-xl overflow-hidden flex items-center justify-center border-3 border-slate-900 shadow-inner">
+              <video id="webcam" autoplay playsinline class="w-full h-full object-cover scale-x-[-1]"></video>
+              <img id="photo-preview" alt="Hasil Foto" class="hidden w-full h-full object-cover" />
+              <canvas id="canvas" class="hidden"></canvas>
+
+              <!-- Garis Sudut Viewfinder Kiosk -->
+              <div class="pointer-events-none absolute inset-3 border-2 border-dashed border-white/35 rounded-lg"></div>
+
+              <!-- Overlay Hitung Mundur 5 Detik -->
+              <div id="countdown-overlay" class="hidden absolute inset-0 bg-slate-900/60 backdrop-blur-[1px] flex flex-col items-center justify-center pointer-events-none">
+                <span id="countdown-number" class="font-display text-8xl text-bingo-yellow drop-shadow-[4px_4px_0px_#0f172a] animate-bounce">
+                  5
+                </span>
+                <span class="bg-bingo-orange text-white text-xs font-extrabold px-3.5 py-1 rounded-full border-2 border-slate-900 mt-2 shadow-[2px_2px_0px_#0f172a]">
+                  TURUNKAN TANGAN &amp; SENYUM!
+                </span>
+              </div>
+
+              <!-- Badge Petunjuk 5 Jari -->
+              <span id="gesture-hint" class="absolute top-2.5 right-2.5 bg-bingo-cream text-slate-900 border-2 border-slate-900 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow-[2px_2px_0px_#0f172a]">
+                🖐️ Angkat 5 Jari = Foto 5 Detik
+              </span>
+
+              <!-- Status Kamera -->
+              <span id="camera-status" class="absolute bottom-2.5 left-2.5 bg-black/80 text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-md border border-white/20">
+                Memuat Kamera...
+              </span>
+            </div>
+
+            <!-- Tips Mini dari BinBin -->
+            <div class="mt-3 bg-bingo-cream/60 border-2 border-slate-900 rounded-xl p-2.5 flex items-center gap-2.5">
+              <img src="./binbin.jpeg" alt="BinBin" class="w-8 h-8 rounded-full border border-slate-900 object-cover shrink-0" />
+              <p class="text-[11px] font-bold text-slate-800 leading-snug">
+                Buka lebar <b>5 jari tangan</b> di depan kamera selama setengah detik untuk memicu timer otomatis, atau klik tombol biru di bawah.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 flex gap-2">
+            <button type="button" id="btn-capture" class="flex-1 bg-bingo-blue hover:opacity-95 text-white text-sm font-extrabold py-3 px-4 rounded-xl tactile-btn cursor-pointer uppercase tracking-wide">
+              📸 Ambil Foto Manual
+            </button>
+            <button type="button" id="btn-retake" class="hidden flex-1 bg-bingo-cream hover:bg-bingo-yellow text-slate-900 text-sm font-extrabold py-3 px-4 rounded-xl tactile-btn cursor-pointer uppercase">
+              🔄 Foto Ulang
+            </button>
+          </div>
+        </div>
+
+        <!-- Kolom Form Setoran -->
+        <div class="lg:col-span-7 bg-white p-5 rounded-2xl tactile-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <span class="bg-slate-900 text-bingo-yellow font-display text-lg px-2.5 py-0.5 rounded-lg">02</span>
+                <h2 class="font-display text-2xl tracking-wide uppercase text-slate-900">Data Setoran Gotong Royong</h2>
+              </div>
+              <span class="bg-bingo-cream text-slate-900 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-slate-900">
+                POSKO RT/RW
+              </span>
+            </div>
+
+            <form id="attendance-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-extrabold uppercase text-slate-700 mb-1">Nama Lengkap Warga *</label>
+                  <input type="text" id="nama-warga" required placeholder="Contoh: Ibu Rika / Pak Budi" class="w-full border-2 border-slate-900 rounded-xl px-3.5 py-2.5 text-sm font-semibold focus:outline-none focus:bg-bingo-cream/40" />
+                </div>
+                <div>
+                  <label class="block text-xs font-extrabold uppercase text-slate-700 mb-1">Nomor Rumah / Blok *</label>
+                  <input type="text" id="nomor-rumah" required placeholder="Contoh: Blok B2 / No. 14" class="w-full border-2 border-slate-900 rounded-xl px-3.5 py-2.5 text-sm font-semibold focus:outline-none focus:bg-bingo-cream/40" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-extrabold uppercase text-slate-700 mb-1">Kategori &amp; Alokasi Sampah *</label>
+                  <select id="kategori-sampah" class="w-full border-2 border-slate-900 rounded-xl px-3.5 py-2.5 text-sm font-bold focus:outline-none focus:bg-bingo-cream/40 bg-white cursor-pointer">
+                    <option value="plastik">♻️ Plastik (Alokasi: Paving Block)</option>
+                    <option value="organik">🌿 Organik / Daun (Alokasi: Pupuk Kompos)</option>
+                  </select>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <label class="block text-xs font-extrabold uppercase text-slate-700">Estimasi Berat (kg) *</label>
+                    <div class="flex gap-1">
+                      <button type="button" onclick="document.getElementById('berat-sampah').value='0.5'" class="text-[10px] font-extrabold bg-bingo-cream hover:bg-bingo-yellow border border-slate-900 px-1.5 py-0.2 rounded cursor-pointer">0.5</button>
+                      <button type="button" onclick="document.getElementById('berat-sampah').value='1'" class="text-[10px] font-extrabold bg-bingo-cream hover:bg-bingo-yellow border border-slate-900 px-1.5 py-0.2 rounded cursor-pointer">1</button>
+                      <button type="button" onclick="document.getElementById('berat-sampah').value='2'" class="text-[10px] font-extrabold bg-bingo-cream hover:bg-bingo-yellow border border-slate-900 px-1.5 py-0.2 rounded cursor-pointer">2</button>
+                      <button type="button" onclick="document.getElementById('berat-sampah').value='5'" class="text-[10px] font-extrabold bg-bingo-cream hover:bg-bingo-yellow border border-slate-900 px-1.5 py-0.2 rounded cursor-pointer">5</button>
+                    </div>
+                  </div>
+                  <input type="number" id="berat-sampah" step="0.1" min="0.1" value="1" required class="w-full border-2 border-slate-900 rounded-xl px-3.5 py-2.5 text-sm font-semibold focus:outline-none focus:bg-bingo-cream/40" />
+                </div>
+              </div>
+
+              <div class="pt-3">
+                <button type="submit" class="w-full bg-bingo-orange hover:opacity-95 text-white font-extrabold text-sm py-3.5 px-4 rounded-xl tactile-btn cursor-pointer uppercase tracking-wider">
+                  ✅ Catat Kehadiran &amp; Simpan Setoran
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- TABEL LOG KEHADIRAN -->
+      <section id="section-log" class="bg-white rounded-2xl tactile-card overflow-hidden">
+        <div class="p-5 border-b-2 border-slate-900 bg-bingo-cream flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+          <div>
+            <h2 class="font-display text-2xl tracking-wide uppercase text-slate-900">Log Kehadiran &amp; Setoran Warga</h2>
+            <p class="text-xs font-semibold text-slate-700">Bukti digital partisipasi gotong royong &amp; transparansi daur ulang</p>
+          </div>
+          <div class="flex gap-2">
+            <button id="btn-export" class="bg-bingo-yellow hover:opacity-95 text-slate-900 font-extrabold text-xs px-4 py-2.5 rounded-xl tactile-btn cursor-pointer uppercase">
+              📥 Export CSV (Excel)
+            </button>
+            <button id="btn-clear" class="bg-white hover:bg-rose-100 text-rose-700 font-extrabold text-xs px-3.5 py-2.5 rounded-xl tactile-btn cursor-pointer uppercase">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-bingo-blue/25 text-slate-900 text-xs font-extrabold uppercase border-b-2 border-slate-900">
+                <th class="py-3 px-4">Foto</th>
+                <th class="py-3 px-4">Warga &amp; Alamat</th>
+                <th class="py-3 px-4">Kategori &amp; Alokasi</th>
+                <th class="py-3 px-4">Berat</th>
+                <th class="py-3 px-4">Estimasi Hasil</th>
+                <th class="py-3 px-4">Waktu Setor</th>
+              </tr>
+            </thead>
+            <tbody id="log-table-body" class="divide-y-2 divide-slate-200 text-sm">
+              <tr>
+                <td colspan="6" class="py-10 text-center text-slate-500 font-semibold text-sm">
+                  Belum ada warga yang menyetor sampah. Mulai dengan mengangkat 5 jari di depan kamera!
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white border-t-4 border-slate-900 py-6 px-4 mt-8">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div class="flex items-center gap-3">
+          <img src="./binbin.jpeg" alt="BinBin" class="w-10 h-10 rounded-full border-2 border-bingo-yellow object-cover" />
+          <div>
+            <p class="font-display text-xl tracking-wide text-bingo-yellow">BINGO (ECO-ATTEND) MVP</p>
+            <p class="text-xs text-slate-300">Digitalisasi Gotong Royong RT/RW &amp; Ekonomi Sirkular</p>
+          </div>
+        </div>
+        <p class="text-xs font-semibold text-slate-400">
+          Dikembangkan oleh <span class="text-white font-bold">Sutan Lutfi Frank Richard</span> • Ilmu Komputer, Universitas Cakrawala (2026)
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>

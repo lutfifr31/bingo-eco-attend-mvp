@@ -1,0 +1,10 @@
+<svg width="1200" height="110" viewBox="0 0 1200 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="1184" height="92" rx="20" fill="#0F172A" />
+  <rect x="6" y="6" width="1184" height="92" rx="20" fill="#FFCB56" stroke="#0F172A" stroke-width="4.5" />
+  <text x="600" y="46" text-anchor="middle" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-weight="900" font-size="18" letter-spacing="0.6">
+    BINGO (ECO-ATTEND) • INOVASI DIGITAL GOTONG ROYONG &amp; EKONOMI SIRKULAR
+  </text>
+  <text x="600" y="74" text-anchor="middle" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="13.5" opacity="0.85">
+    Dikembangkan oleh Sutan Lutfi Frank Richard • Ilmu Komputer, Universitas Cakrawala (2026)
+  </text>
+</svg>

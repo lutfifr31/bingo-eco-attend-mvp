@@ -1,0 +1,55 @@
+<svg width="1200" height="280" viewBox="0 0 1200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(-2deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+    @keyframes floatFast {
+      0%, 100% { transform: translateY(0px) rotate(3deg); }
+      50% { transform: translateY(-10px) rotate(-3deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 1; }
+    }
+    .badge-float-1 { animation: floatSlow 4s ease-in-out infinite; transform-origin: center; }
+    .badge-float-2 { animation: floatFast 3.5s ease-in-out infinite; transform-origin: center; }
+    .title-shadow { font-family: 'Segoe UI', Impact, Arial Black, sans-serif; font-weight: 900; }
+    .subtitle-font { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700; }
+  </style>
+
+  
+  <rect x="6" y="6" width="1188" height="268" rx="24" fill="#73A5CA" stroke="#0F172A" stroke-width="6" />
+
+  
+  <circle cx="95" cy="65" r="90" fill="#FFE9A9" fill-opacity="0.22" />
+  <circle cx="1110" cy="220" r="110" fill="#FFCB56" fill-opacity="0.28" />
+
+  
+  <g class="badge-float-1">
+    <rect x="52" y="34" width="215" height="38" rx="19" fill="#FFE9A9" stroke="#0F172A" stroke-width="3" />
+    <circle cx="74" cy="53" r="7" fill="#FF933E" stroke="#0F172A" stroke-width="2" />
+    <text x="90" y="58" fill="#0F172A" font-size="13" class="subtitle-font" letter-spacing="0.8">5-FINGER PALM SHUTTER</text>
+  </g>
+
+  
+  <g class="badge-float-2">
+    <rect x="975" y="34" width="170" height="38" rx="19" fill="#FF933E" stroke="#0F172A" stroke-width="3" />
+    <text x="1002" y="58" fill="#FFFFFF" font-size="14" class="subtitle-font" letter-spacing="1">ECO-ATTEND MVP</text>
+  </g>
+
+  
+  <text x="604" y="148" text-anchor="middle" fill="#0F172A" font-size="76" class="title-shadow" letter-spacing="2">BINGO • ECO-ATTEND</text>
+  <text x="598" y="142" text-anchor="middle" fill="#FFFFFF" font-size="76" class="title-shadow" letter-spacing="2">BINGO • ECO-ATTEND</text>
+
+  
+  <rect x="235" y="168" width="730" height="44" rx="12" fill="#FFCB56" stroke="#0F172A" stroke-width="3.5" />
+  <text x="600" y="196" text-anchor="middle" fill="#0F172A" font-size="17" class="subtitle-font" letter-spacing="0.5">
+    Smart Gotong Royong Attendance &amp; Circular Waste Allocation System
+  </text>
+
+  
+  <text x="600" y="246" text-anchor="middle" fill="#0F172A" font-size="13" class="subtitle-font" opacity="0.85">
+    PLASTIK → PAVING BLOCK   •   ORGANIK → PUPUK KOMPOS   •   HANDS-FREE AI CAMERA
+  </text>
+</svg>
